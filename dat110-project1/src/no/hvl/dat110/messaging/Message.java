@@ -41,7 +41,7 @@ public class Message {
 	public void decapsulate(byte[] received) {
 		// TODO
 		// decapsulate data in received and put in payload
-		for (int i = 0; i<received.length-1; i++) {
+		for (int i = 0; i<received.length; i++) {
 			received[0] = received[i+1];
 		}
 	   
