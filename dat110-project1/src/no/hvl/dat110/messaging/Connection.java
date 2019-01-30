@@ -30,10 +30,15 @@ public class Connection {
 
 	public void send(Message message) {
 
-		// TODO
 		// encapsulate the data contained in the message and write to the output stream
+		
+		try {
+		outStream.write(message.encapsulate());
+		} catch (Exception e) {
+			System.out.println("Error occurred: " + e);
+		}
 
-		throw new RuntimeException("not yet implemented");
+		
 
 	}
 
@@ -42,6 +47,8 @@ public class Connection {
 		Message message;
 		byte[] recvbuf;
 
+		
+		
 		// TODO
 		// read a segment from the input stream and decapsulate into message
 
