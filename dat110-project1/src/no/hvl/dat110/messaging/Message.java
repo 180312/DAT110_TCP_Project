@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Message {
 
-	//Anders
+	//Anders Mæhlum
 	private byte[] payload;
 
 	public Message(byte[] payload) {
