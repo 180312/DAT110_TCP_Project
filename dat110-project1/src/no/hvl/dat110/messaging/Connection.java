@@ -42,7 +42,7 @@ public class Connection {
 
 	public Message receive() {
 
-		Message message = null;
+		Message message = new Message();
 		byte[] recvbuf = null;
 
 		// TODO
@@ -53,10 +53,6 @@ public class Connection {
 		} catch (IOException e) {
 			System.out.println(e);
 		}
-
-		
-
-
 		return message;
 
 	}
@@ -68,7 +64,6 @@ public class Connection {
 
 			outStream.close();
 			inStream.close();
-
 			socket.close();
 		} catch (IOException ex) {
 
