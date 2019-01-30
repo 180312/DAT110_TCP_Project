@@ -31,30 +31,31 @@ public class Connection {
 	public void send(Message message) {
 
 		// encapsulate the data contained in the message and write to the output stream
-		
+
 		try {
-		outStream.write(message.encapsulate());
+			outStream.write(message.encapsulate());
 		} catch (Exception e) {
 			System.out.println("Error occurred: " + e);
 		}
-
-		
 
 	}
 
 	public Message receive() {
 
-		Message message;
-		byte[] recvbuf;
+		Message message = null;
+		byte[] recvbuf = null;
 
-		
-		
 		// TODO
 		// read a segment from the input stream and decapsulate into message
-
-		if (true) {
-			throw new RuntimeException("not yet implemented");
+		try {
+			inStream.read(recvbuf);
+			message.decapsulate(recvbuf);
+		} catch (IOException e) {
+			System.out.println(e);
 		}
+
+		
+
 
 		return message;
 
