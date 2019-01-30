@@ -4,10 +4,6 @@ import java.util.Arrays;
 
 public class Message {
 
-<<<<<<< HEAD
-	//Anders Mæhlum
-=======
->>>>>>> parent of 361a3b7... Test
 	private byte[] payload;
 
 	public Message(byte[] payload) {
