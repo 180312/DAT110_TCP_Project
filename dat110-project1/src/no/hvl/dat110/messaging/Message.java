@@ -1,8 +1,6 @@
 package no.hvl.dat110.messaging;
 import static no.hvl.dat110.messaging.MessageConfig.SEGMENTSIZE;
 
-import java.util.Arrays;
-
 public class Message {
 
 	private byte[] payload;
@@ -40,8 +38,6 @@ public class Message {
 	}
 
 	public void decapsulate(byte[] received) {
-		// TODO
-		// decapsulate data in received and put in payload
 		int i = received[0];
 		
 		byte[] decoded = new byte[i];
