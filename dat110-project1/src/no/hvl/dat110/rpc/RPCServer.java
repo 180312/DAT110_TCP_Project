@@ -41,7 +41,7 @@ public class RPCServer {
 		   byte[] bytes = receivedMessage.getData();
 		   int rpcid = bytes[0];
 		   RPCImpl find = services.get(rpcid);
-		   byte[] answer = find.invoke(Arrays.copyOfRange(bytes, 1, bytes.length));
+		   byte[] answer = find.invoke(bytes);
 		   
 		   Message response = new Message(answer);
 		   
