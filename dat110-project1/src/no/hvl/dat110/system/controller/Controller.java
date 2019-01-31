@@ -9,34 +9,23 @@ public class Controller {
 
 	public static void main(String[] args) {
 
-		Display display;
-		Sensor sensor;
-		RPCClient displayclient;
-		RPCClient sensorclient;
-
-		System.out.println("Controller starting ...");
-
+		Display display = new Display();
+		Sensor sensor = new Sensor();
+		RPCClient displayclient = new RPCClient(Common.DISPLAYHOST, Common.DISPLAYPORT);
+		RPCClient sensorclient = new RPCClient(Common.SENSORHOST, Common.SENSORPORT);
 		RPCServerStopStub stopdisplay = new RPCServerStopStub();
 		RPCServerStopStub stopsensor = new RPCServerStopStub();
 
-		// create display and sensor object
-		// create RPC clients for display device and sensor device
-		// register RPC methods in the RPC layer
-		display = new Display();
-		sensor = new Sensor();
-		displayclient = new RPCClient(Common.DISPLAYHOST, Common.DISPLAYPORT);
-		sensorclient = new RPCClient(Common.SENSORHOST, Common.SENSORPORT);
-		displayclient.register(sensor);
+		System.out.println("Controller starting ...");
+		
+		displayclient.register(display);
 		sensorclient.register(sensor);
 
-		// register stop methods in the RPC middleware
 		displayclient.register(stopdisplay);
 		sensorclient.register(stopsensor);
 
-		// loop while reading from sensor and write to display via RPC
 		try {
 			while (true) {
-
 				int value = sensor.read();
 				display.write("sensor: " + value);
 				return;

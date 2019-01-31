@@ -1,6 +1,5 @@
 package no.hvl.dat110.rpc;
 
-import java.util.Arrays;
 import java.util.HashMap;
 
 import no.hvl.dat110.messaging.Connection;
@@ -46,14 +45,7 @@ public class RPCServer {
 		   Message response = new Message(answer);
 		   
 		   connection.send(response);
-		   
-		   // TODO
-		   // - receive message containing RPC request
-		   // - find the identifier for the RPC methods to invoke
-		   // - lookup the methods to be invoked
-		   // - invoke the method
-		   // - send back message containing RPC reply
-		   
+
 		   if (rpcid == RPCCommon.RPIDSTOP) {
 			   stop = true;
 		   }
