@@ -25,13 +25,14 @@ public class Message {
 	}
 
 	public byte[] encapsulate() {
-		byte[] encoded = payload;
-		// TODO
-		// encapulate/encode the payload of the message
-		int length = encoded.length;
-		for(int i = length; i>0; i--) {
-			encoded[i] = encoded[i-1];
+		int length = payload.length;
+		
+		byte[] encoded = new byte[SEGMENTSIZE];
+		
+		for (int j = length; j>0; j--) {
+			encoded[j] = payload[j-1];
 		}
+
 		encoded[0] = (byte) length;
 		
 		return encoded;
@@ -41,11 +42,15 @@ public class Message {
 	public void decapsulate(byte[] received) {
 		// TODO
 		// decapsulate data in received and put in payload
-		for (int i = 0; i<received.length; i++) {
-			received[0] = received[i+1];
+		int i = received[0];
+		
+		byte[] decoded = new byte[i];
+		
+		for(int j = 0; j<i; j++) {
+			decoded[j] = received[j+1]; 
 		}
 	   
-		this.payload = received;
+		this.payload = decoded;
 		
 	}
 }
