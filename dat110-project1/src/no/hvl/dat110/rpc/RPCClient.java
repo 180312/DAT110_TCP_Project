@@ -21,8 +21,7 @@ public class RPCClient {
 		// connect using the underlying messaging layer connection
 
 		try {
-
-			msgclient.connect();
+			connection = msgclient.connect();
 		} catch (Exception e) {
 			System.out.println("An error occurd: " + e);
 		}
@@ -30,11 +29,13 @@ public class RPCClient {
 	}
 
 	public void disconnect() {
+		// disconnect using the underlying messaging layer connection
+		try {
+			connection.close();
 
-		// TODO: disconnect/close the underlying messaging connection
-
-		throw new RuntimeException("not yet implemented");
-
+		} catch(Exception e) {
+			System.out.println("Error occurd: " + e);
+		}
 	}
 
 	public byte[] call(byte[] rpcrequest) {
