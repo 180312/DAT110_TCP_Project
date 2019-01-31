@@ -27,7 +27,7 @@ public class Controller {
 		try {
 			while (true) {
 				int value = sensor.read();
-				display.write("sensor: " + value);
+				display.write(value+"°C");
 				return;
 			}
 		} catch (Exception e) {

@@ -7,10 +7,15 @@ public class Display extends RPCStub {
 	private byte RPCID = 1;
 
 	public void write(String message) {
-
+		
+		rmiclient.connect();
+		
+		byte[] bytesToSend = RPCUtils.marshallString(RPCID, message);
+		
+		byte[] byteReceived = rmiclient.call(bytesToSend);
+		
 		// TODO
 		// implement marshalling, call and unmarshalling for write RPC method
 
-		throw new RuntimeException("not yet implemented");
 	}
 }
