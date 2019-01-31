@@ -22,7 +22,7 @@ public class RPCClient {
 		try {
 			connection = msgclient.connect();
 		} catch (Exception e) {
-			System.out.println("An error occurd: " + e);
+			System.out.println("An error occurred: " + e);
 		}
 
 	}
@@ -36,7 +36,7 @@ public class RPCClient {
 			}
 
 		} catch(Exception e) {
-			System.out.println("Error occurd: " + e);
+			System.out.println("Error occurred: " + e);
 		}
 	}
 
