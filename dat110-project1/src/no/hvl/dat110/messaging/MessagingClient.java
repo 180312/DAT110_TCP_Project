@@ -18,7 +18,7 @@ public class MessagingClient {
 	// connect to messaging server
 	public Connection connect() {
 		
-		// TODO
+
 		// create TCP socket for client and connection
 		
 		Connection connection = null;
