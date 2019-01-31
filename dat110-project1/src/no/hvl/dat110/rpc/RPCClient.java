@@ -17,7 +17,6 @@ public class RPCClient {
 	}
 
 	public void connect() {
-
 		// connect using the underlying messaging layer connection
 
 		try {
@@ -31,7 +30,10 @@ public class RPCClient {
 	public void disconnect() {
 		// disconnect using the underlying messaging layer connection
 		try {
+			if(connection != null) {
 			connection.close();
+			
+			}
 
 		} catch(Exception e) {
 			System.out.println("Error occurd: " + e);
