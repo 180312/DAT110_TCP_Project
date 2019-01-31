@@ -45,7 +45,6 @@ public class Connection {
 		Message message = new Message();
 		byte[] recvbuf = null;
 
-		// TODO
 		// read a segment from the input stream and decapsulate into message
 		try {
 			inStream.read(recvbuf);
