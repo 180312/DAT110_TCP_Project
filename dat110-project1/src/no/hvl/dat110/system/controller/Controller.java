@@ -31,10 +31,7 @@ public class Controller  {
 		sensorclient.register(sensor);
 		
 		
-		if (true) {
-			  throw new RuntimeException("not yet implemented");
-		}
-		
+	 
 		// register stop methods in the RPC middleware
 		displayclient.register(stopdisplay);
 		sensorclient.register(stopsensor);
