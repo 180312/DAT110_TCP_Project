@@ -1,4 +1,5 @@
 package no.hvl.dat110.messaging;
+import static no.hvl.dat110.messaging.MessageConfig.SEGMENTSIZE;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -43,7 +44,7 @@ public class Connection {
 	public Message receive() {
 
 		Message message = new Message();
-		byte[] recvbuf = null;
+		byte[] recvbuf = new byte[SEGMENTSIZE];
 
 		// read a segment from the input stream and decapsulate into message
 		try {
