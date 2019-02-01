@@ -24,15 +24,13 @@ public class Controller {
 		displayclient.register(stopdisplay);
 		sensorclient.register(stopsensor);
 
-		try {
-			for (int i = 0; i<N; i++) {
-				int value = sensor.read();
-				display.write(value+"°C");
-			}
-		} catch (Exception e) {
-			System.out.println("Error occurred: " + e);
-		}
+		
+		for (int i = 0; i<N; i++) {
+			int value = sensor.read();
+			display.write(value+" °C");
 
+		}
+		
 		stopdisplay.stop();
 		stopsensor.stop();
 

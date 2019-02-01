@@ -18,9 +18,6 @@ public class Sensor extends RPCStub {
 		
 		int temp = RPCUtils.unmarshallInteger(byteReceived);
 		
-		// TODO
-		// implement marshalling, call and unmarshalling for read RPC method
-		
 		return temp;
 	}
 	
