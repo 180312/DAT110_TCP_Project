@@ -25,10 +25,9 @@ public class Controller {
 		sensorclient.register(stopsensor);
 
 		try {
-			while (true) {
+			for (int i = 0; i<N; i++) {
 				int value = sensor.read();
 				display.write(value+"°C");
-				return;
 			}
 		} catch (Exception e) {
 			System.out.println("Error occurred: " + e);
