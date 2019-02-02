@@ -13,7 +13,7 @@ public class SensorDevice {
 		
 		RPCServer sensorserver = new RPCServer(Common.SENSORPORT);
 		
-	    sensorserver.register(1,sensor);
+	    sensorserver.register(2,sensor);
 		
 		sensorserver.run();
 		

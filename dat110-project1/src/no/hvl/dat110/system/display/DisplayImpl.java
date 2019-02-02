@@ -17,11 +17,7 @@ public class DisplayImpl implements RPCImpl {
 		
 		byte rpcid = request[0];
 		
-		byte[] reply = RPCUtils.marshallString(rpcid, s);
-		
-		// TODO: 
-		// implement unmarshalling, call, and marshall for write RPC method
-		// look at how this is done int he SensorImpl for the read method
+		byte[] reply = RPCUtils.marshallVoid(rpcid);
 
 		return reply;
 	}

@@ -12,7 +12,7 @@ public class Display extends RPCStub {
 		
 		byte[] bytesToSend = RPCUtils.marshallString(RPCID, message);
 		
-		byte[] byteReceived = rmiclient.call(bytesToSend);
+		RPCUtils.unmarshallVoid(rmiclient.call(bytesToSend));
 
 	}
 }

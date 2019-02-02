@@ -4,7 +4,7 @@ import no.hvl.dat110.rpc.*;
 
 public class Sensor extends RPCStub {
 
-	private byte RPCID = 1;
+	private byte RPCID = 2;
 	
 	public int read() {
 	

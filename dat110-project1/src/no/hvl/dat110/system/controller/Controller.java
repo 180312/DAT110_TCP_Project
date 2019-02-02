@@ -28,6 +28,12 @@ public class Controller {
 		for (int i = 0; i<N; i++) {
 			int value = sensor.read();
 			display.write(value+" °C");
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 
 		}
 		
